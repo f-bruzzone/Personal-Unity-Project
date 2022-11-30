@@ -13,17 +13,10 @@ public class SpawnManager : MonoBehaviour
     private float yBottomBound = 15.0f;
     private float powerUpBounds = 25.0f;
 
-    // Start is called before the first frame update
     void Start()
     {
         Invoke("SpawnEnemy", 2);
         Invoke("SpawnPowerUp", 5.0f);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void SpawnPowerUp()

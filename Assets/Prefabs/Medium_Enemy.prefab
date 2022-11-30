@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1122950365556955782}
   - component: {fileID: 1122950365556955781}
   - component: {fileID: 1122950365556955780}
-  - component: {fileID: 1122950365556955784}
+  - component: {fileID: 4166327336525490087}
   m_Layer: 0
   m_Name: Medium_Enemy
   m_TagString: Enemy
@@ -99,7 +99,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.4413294, y: 0.7670288, z: 8.316891}
   m_Center: {x: 0.067964554, y: 0.116485596, z: 0.0028953552}
---- !u!114 &1122950365556955784
+--- !u!114 &4166327336525490087
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,11 +108,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1122950365556955779}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccb1f0882b55c024bac9f9ac13d3506a, type: 3}
+  m_Script: {fileID: 11500000, guid: 29d4f68ec7f4d514e9ed4c572b56361e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
-  bounds: 45
+  MoveSpeed: 7
 --- !u!1001 &3910165793918512307
 PrefabInstance:
   m_ObjectHideFlags: 0
