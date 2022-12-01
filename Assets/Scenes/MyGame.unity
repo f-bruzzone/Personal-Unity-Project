@@ -123,6 +123,16 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &100483641 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3493271301349219978, guid: 897eeef91ef8e194ea725b2905e7d730, type: 3}
+  m_PrefabInstance: {fileID: 3493271303000237832}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &188857637 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3493271301349182416, guid: 897eeef91ef8e194ea725b2905e7d730, type: 3}
+  m_PrefabInstance: {fileID: 3493271303000237832}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,6 +592,11 @@ Transform:
   m_Father: {fileID: 1612987832}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!198 &1915176354 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2015231512603620220, guid: 897eeef91ef8e194ea725b2905e7d730, type: 3}
+  m_PrefabInstance: {fileID: 3493271303000237832}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2130569491
 GameObject:
   m_ObjectHideFlags: 0
@@ -752,5 +767,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3493271302719181626, guid: 897eeef91ef8e194ea725b2905e7d730, type: 3}
+      propertyPath: Head
+      value: 
+      objectReference: {fileID: 188857637}
+    - target: {fileID: 3493271302719181626, guid: 897eeef91ef8e194ea725b2905e7d730, type: 3}
+      propertyPath: Turret
+      value: 
+      objectReference: {fileID: 100483641}
+    - target: {fileID: 3493271302719181626, guid: 897eeef91ef8e194ea725b2905e7d730, type: 3}
+      propertyPath: FiringAnim
+      value: 
+      objectReference: {fileID: 1915176354}
+    - target: {fileID: 3493271302719181626, guid: 897eeef91ef8e194ea725b2905e7d730, type: 3}
+      propertyPath: ProjectilePrefab
+      value: 
+      objectReference: {fileID: 4658593517225283757, guid: fa52a14fee9273a478322a79131b46b1, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 897eeef91ef8e194ea725b2905e7d730, type: 3}
