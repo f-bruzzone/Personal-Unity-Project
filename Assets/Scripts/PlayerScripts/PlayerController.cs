@@ -3,9 +3,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour, IDamageable
 {
-
     private PlayerMovement _playerMovement;
     private PlayerAction _playerAction;
+
+    private float _health;
 
     [Header("Movement Properties")]
     public float MoveSpeed = 20.0f;
@@ -38,9 +39,15 @@ public class PlayerController : MonoBehaviour, IDamageable
         _playerAction.PlayerFire();
     }
 
-    public void TakeDamage()
+    public void TakeDamage(float damage)
     {
 
+    }
+
+    public float Health
+    {
+        get { return _health; }
+        set { _health = value; }
     }
 
     //Powerup methods
