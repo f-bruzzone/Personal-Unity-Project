@@ -9,14 +9,12 @@ public class PlayerAction
     private readonly float _projectileSpawnOffset = 1.5f;
     private readonly ParticleSystem _firingAnim;
     private bool _canFire = true;
-    private float _fireRate;
 
     public PlayerAction(PlayerController playerController)
 	{
 		_playerController = playerController;
         _turret = playerController.Turret;
         _projectilePrefab = playerController.ProjectilePrefab;
-        _fireRate = playerController.FireRate;
         _firingAnim = playerController.FiringAnim;
     }
 
@@ -24,15 +22,15 @@ public class PlayerAction
     {
         if (Input.GetKeyUp(KeyCode.Mouse0) && _canFire)
         {
-            _playerController.StartCoroutine(FireRate());
+            _playerController.StartCoroutine(FireRate(_playerController.FireRate));
         }
     }
 
-    IEnumerator FireRate()
+    IEnumerator FireRate(float fireRate)
     {
         _canFire = false;
         FireProjectile();
-        yield return new WaitForSeconds(_fireRate);
+        yield return new WaitForSeconds(fireRate);
         _canFire = true;
     }
 

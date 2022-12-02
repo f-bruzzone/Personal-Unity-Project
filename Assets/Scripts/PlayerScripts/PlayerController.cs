@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour, IDamageable
@@ -7,13 +6,14 @@ public class PlayerController : MonoBehaviour, IDamageable
     private PlayerAction _playerAction;
 
     private float _health;
+    public float FireRate { get { return _fireRate; } set { _fireRate = value; } }
 
     [Header("Movement Properties")]
     public float MoveSpeed = 20.0f;
 
     [Header("Firing Properties")]
-    public float FireRate = 0.3f;
     public GameObject ProjectilePrefab;
+    [SerializeField] private float _fireRate = 0.3f;
 
     [Header("Powerup Properties")]
     public float powerupDuration = 12.0f;
@@ -45,26 +45,19 @@ public class PlayerController : MonoBehaviour, IDamageable
         get { return _health; }
         set { _health = value; }
     }
+
     public void TakeDamage(float damage)
     {
         Health -= damage;
     }
 
-    //Powerup methods
-
     private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("PowerUp"))
+    {   
+        if (other.GetComponent<IPowerUp>() != null)
         {
-            FireRate *= 0.333333f;
+            var powerUp = other.GetComponent<IPowerUp>();
+            powerUp.PowerUp(this);
             Destroy(other.gameObject);
-            StartCoroutine(PowerUp());
         }
-    }
-
-    IEnumerator PowerUp()
-    {
-        yield return new WaitForSeconds(powerupDuration);
-        FireRate *= 3;
     }
 }

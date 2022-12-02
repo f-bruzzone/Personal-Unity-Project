@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 461348}
   - component: {fileID: 3352934}
   - component: {fileID: 2331524}
-  - component: {fileID: 4016519922211397757}
   - component: {fileID: 1877134848946016876}
   - component: {fileID: 1937608551633382782}
+  - component: {fileID: -3866304582607251798}
   m_Layer: 6
   m_Name: PowerIcon
   m_TagString: PowerUp
@@ -86,19 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &4016519922211397757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 107744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 347a78386a5dc5344b44265142327aab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifespan: 7
 --- !u!54 &1877134848946016876
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -128,3 +115,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.67489624, y: 1.0880154, z: 0.20007594}
   m_Center: {x: 0, y: -0.06616484, z: 0.000000007450581}
+--- !u!114 &-3866304582607251798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3332cc4c38939c54ab5c95586c933fcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
