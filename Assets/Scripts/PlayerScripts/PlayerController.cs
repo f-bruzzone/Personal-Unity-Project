@@ -1,8 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IDamageable
 {
 
     private PlayerMovement _playerMovement;
@@ -37,6 +36,11 @@ public class PlayerController : MonoBehaviour
         _playerMovement.BoundPlayer();
         _playerMovement.HeadMovement();
         _playerAction.PlayerFire();
+    }
+
+    public void TakeDamage()
+    {
+
     }
 
     //Powerup methods

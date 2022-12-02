@@ -96,7 +96,7 @@ SphereCollider:
   m_GameObject: {fileID: 3493271302719181604}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.67062193
   m_Center: {x: 0, y: 0.17062192, z: 0}
@@ -112,13 +112,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d26660eb50859f4f83e7b591d730de4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 20
-  fireRate: 0.3
-  projectilePrefab: {fileID: 4658593517225283757, guid: fa52a14fee9273a478322a79131b46b1, type: 3}
+  MoveSpeed: 20
+  FireRate: 0.3
+  ProjectilePrefab: {fileID: 4658593517225283757, guid: fa52a14fee9273a478322a79131b46b1, type: 3}
   powerupDuration: 7
-  head: {fileID: 3493271301349182416}
-  turret: {fileID: 3493271301349219978}
-  firingAnim: {fileID: 2015231512603620220}
+  Head: {fileID: 3493271301349182416}
+  Turret: {fileID: 3493271301349219978}
+  FiringAnim: {fileID: 19800000, guid: 5b6c2f68addb63847b151f0d41a9d3b1, type: 3}
 --- !u!65 &3493271302719181625
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -130,8 +130,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.9508823, y: 1.273988, z: 1}
-  m_Center: {x: 0.033621788, y: 0.13699332, z: 0}
+  m_Size: {x: 1.9508823, y: 1.323087, z: 1}
+  m_Center: {x: 0.033621788, y: 0.16154268, z: 0}
 --- !u!1001 &2015231512618167484
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -241,11 +241,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b6c2f68addb63847b151f0d41a9d3b1, type: 3}
---- !u!198 &2015231512603620220 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 19800000, guid: 5b6c2f68addb63847b151f0d41a9d3b1, type: 3}
-  m_PrefabInstance: {fileID: 2015231512618167484}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3493271301349116596
 PrefabInstance:
   m_ObjectHideFlags: 0

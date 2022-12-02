@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IDamageable
 {
     private EnemyMovement _enemyMovement;
+    [SerializeField] private float Health;
 
     public float MoveSpeed;
 
@@ -21,5 +22,10 @@ public class Enemy : MonoBehaviour
     public void DestroySelf()
     {
         Destroy(gameObject);
+    }
+
+    public void TakeDamage()
+    {
+
     }
 }

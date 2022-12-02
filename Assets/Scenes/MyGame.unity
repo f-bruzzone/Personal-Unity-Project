@@ -719,6 +719,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3493271302719181604, guid: 897eeef91ef8e194ea725b2905e7d730, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493271302719181605, guid: 897eeef91ef8e194ea725b2905e7d730, type: 3}
+      propertyPath: m_Radius
+      value: 0.62803507
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493271302719181605, guid: 897eeef91ef8e194ea725b2905e7d730, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493271302719181605, guid: 897eeef91ef8e194ea725b2905e7d730, type: 3}
+      propertyPath: m_Center.y
+      value: 0.1280347
+      objectReference: {fileID: 0}
     - target: {fileID: 3493271302719181606, guid: 897eeef91ef8e194ea725b2905e7d730, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -729,7 +745,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3493271302719181624, guid: 897eeef91ef8e194ea725b2905e7d730, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.15
+      value: -1.13
       objectReference: {fileID: 0}
     - target: {fileID: 3493271302719181624, guid: 897eeef91ef8e194ea725b2905e7d730, type: 3}
       propertyPath: m_LocalPosition.y
@@ -766,6 +782,14 @@ PrefabInstance:
     - target: {fileID: 3493271302719181624, guid: 897eeef91ef8e194ea725b2905e7d730, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493271302719181625, guid: 897eeef91ef8e194ea725b2905e7d730, type: 3}
+      propertyPath: m_Size.y
+      value: 1.302628
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493271302719181625, guid: 897eeef91ef8e194ea725b2905e7d730, type: 3}
+      propertyPath: m_Center.y
+      value: 0.15131335
       objectReference: {fileID: 0}
     - target: {fileID: 3493271302719181626, guid: 897eeef91ef8e194ea725b2905e7d730, type: 3}
       propertyPath: Head

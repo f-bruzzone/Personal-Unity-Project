@@ -1,5 +1,4 @@
 public interface IEnemy
 {
-    public void Move();
-    public void DestroyOutOfBounds();
+    public float Health { get; set; }
 }
