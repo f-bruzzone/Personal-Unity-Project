@@ -4,7 +4,7 @@ public class PlayerMovement
 {
     private Transform _transform;
     private float _moveSpeed;
-    private readonly float _sideBound = 31.75f;
+    private readonly float _sideBound = 29.5f;
 
 
     private Transform _head;
