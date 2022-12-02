@@ -39,15 +39,15 @@ public class PlayerController : MonoBehaviour, IDamageable
         _playerAction.PlayerFire();
     }
 
-    public void TakeDamage(float damage)
-    {
-
-    }
 
     public float Health
     {
         get { return _health; }
         set { _health = value; }
+    }
+    public void TakeDamage(float damage)
+    {
+        Health -= damage;
     }
 
     //Powerup methods
