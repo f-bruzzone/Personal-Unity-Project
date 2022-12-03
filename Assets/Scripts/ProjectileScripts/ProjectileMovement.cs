@@ -2,19 +2,17 @@ using UnityEngine;
 
 public class ProjectileMovement
 {
-    private float _speed;
     private Vector3 _direction;
     private ProjectileNormal _projectileNormal;
 
     public ProjectileMovement(ProjectileNormal projectile)
     {
         _projectileNormal = projectile;
-        _speed = projectile.Speed;
     }
 
     public void Travel()
     {
-        _projectileNormal.transform.Translate(_direction * _speed * Time.deltaTime);
+        _projectileNormal.transform.Translate(_direction * _projectileNormal.Speed * Time.deltaTime);
         DestroyOutOfBounds();
     }
 
