@@ -13,14 +13,13 @@ public class PowerUpFireRate : PowerUp, IPowerUp
     public float PowerUpDuration
     {
         get { return _powerUpDuration; }
-        set { _powerUpDuration= value; }
+        set { _powerUpDuration = value; }
     }
 
     public void PowerUp(PlayerController player)
     {
         player.FireRate /= _fireRateIncrease;
         Destroy(gameObject);
-        StartCoroutine(Duration(player));
     }
 
     public IEnumerator Duration(PlayerController player)

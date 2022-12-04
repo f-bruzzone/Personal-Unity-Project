@@ -57,6 +57,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         {
             var powerUp = other.GetComponent<IPowerUp>();
             powerUp.PowerUp(this);
+            StartCoroutine(powerUp.Duration(this));
             Destroy(other.gameObject);
         }
     }
