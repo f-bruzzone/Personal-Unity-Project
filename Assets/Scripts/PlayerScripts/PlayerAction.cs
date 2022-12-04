@@ -20,7 +20,7 @@ public class PlayerAction
 
     public void PlayerFire()
     {
-        if (Input.GetKeyUp(KeyCode.Mouse0) && _canFire)
+        if (Input.GetKey(KeyCode.Mouse0) && _canFire)
         {
             _playerController.StartCoroutine(FireRate(_playerController.FireRate));
         }
