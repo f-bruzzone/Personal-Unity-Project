@@ -6,17 +6,6 @@ public abstract class Projectile : MonoBehaviour
     [SerializeField] protected float _speed;
     [SerializeField] protected float _damage;
 
-    /*public float Speed
-    {
-        get { return _speed; }
-        set { _speed = value; }
-    }
-    public float Damage
-    {
-        get { return _damage; }
-        set { _damage = value; }
-    }*/
-
     private void Start()
     {
         GetDirection();
@@ -24,7 +13,17 @@ public abstract class Projectile : MonoBehaviour
 
     private void Update()
     {
-        Travel();
+        if (_direction != Vector3.zero)
+            Travel();
+        else
+            GetDirection();
+    }
+
+    private void OnDisable()
+    {
+        transform.position = Vector3.zero;
+        transform.rotation = Quaternion.identity;
+        _direction = Vector3.zero;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -58,7 +57,7 @@ public abstract class Projectile : MonoBehaviour
         if (transform.position.y > 30 || transform.position.y < 0 ||
            transform.position.x > 45 || transform.position.x < -45)
         {
-            Destroy(gameObject);
+            ProjectileObjectPool._pool.Release(this);
         }
     }
 }

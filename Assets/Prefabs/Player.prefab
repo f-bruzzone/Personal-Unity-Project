@@ -34,6 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3493271301349211608}
+  - {fileID: 6196596793407060933}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -113,8 +114,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 20
-  FireRate: 0.3
   ProjectilePrefab: {fileID: 4658593517225283757, guid: fa52a14fee9273a478322a79131b46b1, type: 3}
+  _fireRate: 0.3
   powerupDuration: 7
   Head: {fileID: 3493271301349182416}
   Turret: {fileID: 3493271301349219978}
@@ -132,6 +133,37 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.9508823, y: 1.323087, z: 1}
   m_Center: {x: 0.033621788, y: 0.16154268, z: 0}
+--- !u!1 &8693914619615384923
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6196596793407060933}
+  m_Layer: 7
+  m_Name: Projectile_Object_Pool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6196596793407060933
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8693914619615384923}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3493271302719181624}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2015231512618167484
 PrefabInstance:
   m_ObjectHideFlags: 0

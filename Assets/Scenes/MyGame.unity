@@ -597,6 +597,24 @@ ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 2015231512603620220, guid: 897eeef91ef8e194ea725b2905e7d730, type: 3}
   m_PrefabInstance: {fileID: 3493271303000237832}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1999331332 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8693914619615384923, guid: 897eeef91ef8e194ea725b2905e7d730, type: 3}
+  m_PrefabInstance: {fileID: 3493271303000237832}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1999331334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999331332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aa547d6e1b8aaf44b940cb0ad99aee3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _projectile: {fileID: 6605334221342845640, guid: fa52a14fee9273a478322a79131b46b1, type: 3}
 --- !u!1 &2130569491
 GameObject:
   m_ObjectHideFlags: 0

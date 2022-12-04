@@ -37,7 +37,9 @@ public class PlayerAction
     private void FireProjectile()
     {
         Vector3 spawnPosition = new Vector3(_turret.position.x, _turret.position.y + _projectileSpawnOffset, _turret.position.z);
-        GameObject.Instantiate(_projectilePrefab, spawnPosition, _projectilePrefab.transform.rotation);
+        var projectile = ProjectileObjectPool._pool.Get();
+        projectile.transform.SetPositionAndRotation(spawnPosition, Quaternion.identity);
+        //GameObject.Instantiate(_projectilePrefab, spawnPosition, _projectilePrefab.transform.rotation);
         _firingAnim.Play();
     }
 }
