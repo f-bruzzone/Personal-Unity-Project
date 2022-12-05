@@ -7,14 +7,18 @@ public class Enemy : MonoBehaviour, IDamageable
     private float _spawnInvincibilityTime = 1.5f;
     public bool isInvincible = true;
 
-    [SerializeField] private float _health = 100.0f;
+    private float _maxHealth = 100;
+    [SerializeField] private float _currentHealth;
+    [SerializeField] private HealthBar _healthBar;
 
     public float MoveSpeed;
 
     private void Start()
     {
+        _currentHealth = _maxHealth;
         _enemyMovement = new EnemyMovement(this);
         StartCoroutine(SpawnInvincibility());
+        _healthBar.UpdateHealth(_maxHealth, _currentHealth);
     }
 
     private void Update()
@@ -29,7 +33,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
     public float Health
     {
-        get { return _health; }
+        get { return _currentHealth; }
         set 
         {
             if (value <= 0)
@@ -38,9 +42,7 @@ public class Enemy : MonoBehaviour, IDamageable
             {
                 if (!isInvincible)
                 {
-                    _health = value;
-                    print("health value changed");
-                    print(_health);
+                    _currentHealth = value;
                 }
             }
         }
@@ -49,6 +51,7 @@ public class Enemy : MonoBehaviour, IDamageable
     public void TakeDamage(float damage)
     {
         Health -= damage;
+        _healthBar.UpdateHealth(_maxHealth, Health);
     }
 
     private IEnumerator SpawnInvincibility()
