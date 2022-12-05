@@ -142,6 +142,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6196596793407060933}
+  - component: {fileID: 8765536993163368644}
   m_Layer: 7
   m_Name: Projectile_Object_Pool
   m_TagString: Untagged
@@ -164,6 +165,19 @@ Transform:
   m_Father: {fileID: 3493271302719181624}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8765536993163368644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8693914619615384923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aa547d6e1b8aaf44b940cb0ad99aee3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _projectile: {fileID: 6605334221342845640, guid: fa52a14fee9273a478322a79131b46b1, type: 3}
 --- !u!1001 &2015231512618167484
 PrefabInstance:
   m_ObjectHideFlags: 0

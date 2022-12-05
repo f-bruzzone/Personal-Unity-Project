@@ -1,10 +1,11 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour, IDamageable
 {
     private EnemyMovement _enemyMovement;
+    private float _spawnInvincibilityTime = 1.5f;
+    public bool isInvincible = true;
 
     [SerializeField] private float _health = 100.0f;
 
@@ -13,6 +14,7 @@ public class Enemy : MonoBehaviour, IDamageable
     private void Start()
     {
         _enemyMovement = new EnemyMovement(this);
+        StartCoroutine(SpawnInvincibility());
     }
 
     private void Update()
@@ -34,9 +36,12 @@ public class Enemy : MonoBehaviour, IDamageable
                 Destroy(gameObject);
             else
             {
-                _health = value;
-                print("health value changed");
-                print(_health);
+                if (!isInvincible)
+                {
+                    _health = value;
+                    print("health value changed");
+                    print(_health);
+                }
             }
         }
     }
@@ -44,5 +49,11 @@ public class Enemy : MonoBehaviour, IDamageable
     public void TakeDamage(float damage)
     {
         Health -= damage;
+    }
+
+    private IEnumerator SpawnInvincibility()
+    {
+        yield return new WaitForSeconds(_spawnInvincibilityTime);
+        isInvincible = false;
     }
 }
