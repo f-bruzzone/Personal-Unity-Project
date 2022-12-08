@@ -51,7 +51,6 @@ public class Enemy : MonoBehaviour, IDamageable
     public void TakeDamage(float damage)
     {
         Health -= damage;
-        print($"{damage} damage taken");
         _healthBar.UpdateHealth(_maxHealth, Health);
     }
 
