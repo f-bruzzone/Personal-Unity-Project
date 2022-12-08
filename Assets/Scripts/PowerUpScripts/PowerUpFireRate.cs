@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class PowerUpFireRate : PowerUp, IPowerUp
 {
-    private float _powerUpDuration = 12.0f;
-    private float _fireRateIncrease = 3.0f;
+    [SerializeField] private float _powerUpDuration = 12.0f;
+    [SerializeField] private float _fireRateIncrease = 3.0f;
 
     private void Start()
     {

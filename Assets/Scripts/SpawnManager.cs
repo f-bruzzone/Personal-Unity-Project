@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
@@ -21,7 +19,7 @@ public class SpawnManager : MonoBehaviour
 
     private void SpawnPowerUp()
     {
-        GameObject powerup = powerups[0];
+        GameObject powerup = powerups[Random.Range(0, powerups.Length)];
         float xPos = Random.Range(-powerUpBounds, powerUpBounds);
         Vector3 spawnPos = new Vector3(xPos, 30.0f, 3);
         Instantiate(powerup, spawnPos, powerup.transform.rotation);

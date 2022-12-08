@@ -19,6 +19,7 @@ public class ProjectileObjectPool: MonoBehaviour
 
 	private void TakeFromPool(Projectile projectile)
 	{
+		projectile.GetComponent<Projectile>().Damage = _projectile.Damage;
 		projectile.gameObject.SetActive(true);
 	}
 

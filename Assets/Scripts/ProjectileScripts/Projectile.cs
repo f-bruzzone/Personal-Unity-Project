@@ -4,7 +4,7 @@ public abstract class Projectile : MonoBehaviour
 {
     private Vector3 _direction;
     [SerializeField] protected float _speed;
-    [SerializeField] protected float _damage;
+    [SerializeField] private float _damage;
 
     private void Start()
     {
@@ -24,6 +24,12 @@ public abstract class Projectile : MonoBehaviour
         transform.position = Vector3.zero;
         transform.rotation = Quaternion.identity;
         _direction = Vector3.zero;
+    }
+
+    public float Damage
+    {
+        get { return _damage; }
+        set { _damage = value; }
     }
 
     private void OnCollisionEnter(Collision collision)
