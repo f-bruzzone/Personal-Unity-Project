@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     [Header("Effects")]
     public ParticleSystem FiringAnim;
+    public AudioSource FiringAudio;
 
     private void Start()
     {

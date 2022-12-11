@@ -1054,5 +1054,13 @@ PrefabInstance:
       propertyPath: ProjectilePrefab
       value: 
       objectReference: {fileID: 4658593517225283757, guid: fa52a14fee9273a478322a79131b46b1, type: 3}
+    - target: {fileID: 6412256257254557393, guid: 897eeef91ef8e194ea725b2905e7d730, type: 3}
+      propertyPath: m_Name
+      value: Cannon_Audio
+      objectReference: {fileID: 0}
+    - target: {fileID: 6822738904000028776, guid: 897eeef91ef8e194ea725b2905e7d730, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 897eeef91ef8e194ea725b2905e7d730, type: 3}

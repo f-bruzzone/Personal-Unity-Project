@@ -9,6 +9,7 @@ public class PlayerAction
     private readonly float _projectileSpawnOffset = 1.5f;
     private readonly ParticleSystem _firingAnim;
     private bool _canFire = true;
+    private readonly AudioSource _fireAudio;
 
     public PlayerAction(PlayerController playerController)
 	{
@@ -16,6 +17,7 @@ public class PlayerAction
         _turret = playerController.Turret;
         _projectilePrefab = playerController.ProjectilePrefab;
         _firingAnim = playerController.FiringAnim;
+        _fireAudio = playerController.FiringAudio;
     }
 
     public void PlayerFire()
@@ -39,7 +41,7 @@ public class PlayerAction
         Vector3 spawnPosition = new Vector3(_turret.position.x, _turret.position.y + _projectileSpawnOffset, _turret.position.z);
         var projectile = ProjectileObjectPool._pool.Get();
         projectile.transform.SetPositionAndRotation(spawnPosition, Quaternion.identity);
-        //GameObject.Instantiate(_projectilePrefab, spawnPosition, _projectilePrefab.transform.rotation);
+        _fireAudio.Play();
         _firingAnim.Play();
     }
 }
