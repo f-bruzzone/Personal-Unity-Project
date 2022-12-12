@@ -1,22 +1,31 @@
+using System;
 using UnityEngine;
 
 public abstract class Projectile : MonoBehaviour
 {
+    private Vector3 _initialAngle;
+
     private Vector3 _direction;
     [SerializeField] private float _speed;
     [SerializeField] private float _damage;
 
     private void Start()
     {
+        _initialAngle = Vector3.up;
         GetDirection();
+        GetRotation();
     }
+
 
     private void Update()
     {
         if (_direction != Vector3.zero)
             Travel();
         else
+        {
             GetDirection();
+            GetRotation();
+        }
     }
 
     private void OnDisable()
@@ -44,7 +53,7 @@ public abstract class Projectile : MonoBehaviour
 
     protected void Travel()
     {
-        transform.Translate(_direction * _speed * Time.deltaTime);
+        transform.Translate(Vector3.up * _speed * Time.deltaTime);
         DestroyOutOfBounds();
     }
 
@@ -65,5 +74,16 @@ public abstract class Projectile : MonoBehaviour
         {
             ProjectileObjectPool._pool.Release(this);
         }
+    }
+    private void GetRotation()
+    {
+        var angle = Vector3.Angle(_initialAngle, _direction);
+
+        if(_direction.x < 0)
+        {
+            angle = -angle;
+        }
+
+        transform.rotation = Quaternion.AngleAxis(angle, new Vector3(0, 0, -1));
     }
 }
