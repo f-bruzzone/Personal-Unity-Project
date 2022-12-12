@@ -8,6 +8,7 @@ public abstract class Projectile : MonoBehaviour
     private Vector3 _direction;
     [SerializeField] private float _speed;
     [SerializeField] private float _damage;
+    [SerializeField] private GameObject _destructionAnimationPrefab;
 
     private void Start()
     {
@@ -31,7 +32,6 @@ public abstract class Projectile : MonoBehaviour
     private void OnDisable()
     {
         transform.position = Vector3.zero;
-        transform.rotation = Quaternion.identity;
         _direction = Vector3.zero;
     }
 
@@ -46,8 +46,9 @@ public abstract class Projectile : MonoBehaviour
         if (collision.collider.GetComponent<Enemy>())
         {
             var enemy = collision.collider.GetComponent<Enemy>();
+            Instantiate(_destructionAnimationPrefab, transform.position, Quaternion.identity);
             enemy.TakeDamage(_damage);
-            Destroy(gameObject);
+            ProjectileObjectPool._pool.Release(this);
         }
     }
 
