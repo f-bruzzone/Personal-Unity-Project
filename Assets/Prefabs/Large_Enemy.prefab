@@ -112,9 +112,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29d4f68ec7f4d514e9ed4c572b56361e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isInvincible: 1
-  _currentHealth: 0
+  _maxHealth: 200
   _healthBar: {fileID: 4812945968017490120}
+  isInvincible: 1
   MoveSpeed: 5
 --- !u!1 &3314965534943526225
 GameObject:
@@ -308,7 +308,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthBar: {fileID: 1613010884964053787}
-  _healthReductionSpeed: 2
 --- !u!1 &5861907973480788382
 GameObject:
   m_ObjectHideFlags: 0

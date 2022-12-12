@@ -3,15 +3,15 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour, IDamageable
 {
+    [SerializeField] private float _maxHealth = 100;
+    [SerializeField] private HealthBar _healthBar;
+    private float _currentHealth;
     private EnemyMovement _enemyMovement;
     private float _spawnInvincibilityTime = 1.5f;
+
     public bool isInvincible = true;
-
-    private float _maxHealth = 100;
-    [SerializeField] private float _currentHealth;
-    [SerializeField] private HealthBar _healthBar;
-
     public float MoveSpeed;
+
 
     private void Start()
     {
