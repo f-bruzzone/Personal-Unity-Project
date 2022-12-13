@@ -143,6 +143,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FieldGunRound_01
       objectReference: {fileID: 0}
+    - target: {fileID: 189306, guid: f127d05270a025740aac64185803fd55, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 480310, guid: f127d05270a025740aac64185803fd55, type: 3}
       propertyPath: m_RootOrder
       value: 0

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ProjectileNormal: Projectile
+public class EnemyProjectile : Projectile
 {
     private void Update()
     {
@@ -11,24 +11,21 @@ public class ProjectileNormal: Projectile
             GetDirection();
             GetRotation(Direction);
         }
-
-        if (DetermineOutOfBounds())
-            DestroyOutOfBounds();
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.GetComponent<Enemy>())
+        if (collision.collider.GetComponent<PlayerController>())
         {
-            var enemy = collision.collider.GetComponent<Enemy>();
             Instantiate(_destructionAnimationPrefab, transform.position, Quaternion.identity);
-            enemy.TakeDamage(Damage);
-            ProjectileObjectPool.Pool.Release(this);
+            Destroy(gameObject);
         }
+        Instantiate(_destructionAnimationPrefab, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 
-    private void DestroyOutOfBounds()
+    protected override void GetDirection()
     {
-        ProjectileObjectPool.Pool.Release(this);
+        Direction = (FindObjectOfType<PlayerController>().transform.position - transform.position).normalized; 
     }
 }

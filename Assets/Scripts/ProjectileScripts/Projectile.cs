@@ -8,25 +8,13 @@ public abstract class Projectile : MonoBehaviour
     private Vector3 _direction;
     [SerializeField] private float _speed;
     [SerializeField] private float _damage;
-    [SerializeField] private GameObject _destructionAnimationPrefab;
+    [SerializeField] protected GameObject _destructionAnimationPrefab;
 
     private void Start()
     {
         _initialAngle = Vector3.up;
         GetDirection();
-        GetRotation();
-    }
-
-
-    private void Update()
-    {
-        if (_direction != Vector3.zero)
-            Travel();
-        else
-        {
-            GetDirection();
-            GetRotation();
-        }
+        GetRotation(_direction);
     }
 
     private void OnDisable()
@@ -40,25 +28,18 @@ public abstract class Projectile : MonoBehaviour
         get { return _damage; }
         set { _damage = value; }
     }
-
-    private void OnCollisionEnter(Collision collision)
+    public Vector3 Direction
     {
-        if (collision.collider.GetComponent<Enemy>())
-        {
-            var enemy = collision.collider.GetComponent<Enemy>();
-            Instantiate(_destructionAnimationPrefab, transform.position, Quaternion.identity);
-            enemy.TakeDamage(_damage);
-            ProjectileObjectPool._pool.Release(this);
-        }
+        get { return _direction; }
+        set { _direction = value; }
     }
 
     protected void Travel()
     {
         transform.Translate(Vector3.up * _speed * Time.deltaTime);
-        DestroyOutOfBounds();
     }
 
-    protected void GetDirection()
+    protected virtual void GetDirection()
     {
         // Converts the mouse position from pixels to the in-game coords
         Vector3 mousePos = Input.mousePosition;
@@ -68,17 +49,14 @@ public abstract class Projectile : MonoBehaviour
         _direction = (mousePos - transform.position).normalized;
     }
 
-    protected void DestroyOutOfBounds()
+    protected bool DetermineOutOfBounds()
     {
-        if (transform.position.y > 30 || transform.position.y < 0 ||
-           transform.position.x > 45 || transform.position.x < -45)
-        {
-            ProjectileObjectPool._pool.Release(this);
-        }
+        return (transform.position.y > 30 || transform.position.y < 0 ||
+           transform.position.x > 45 || transform.position.x < -45);
     }
-    private void GetRotation()
+    protected void GetRotation(Vector3 direction)
     {
-        var angle = Vector3.Angle(_initialAngle, _direction);
+        var angle = Vector3.Angle(_initialAngle, direction);
 
         if(_direction.x < 0)
         {

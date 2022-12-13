@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour, IDamageable
     public float MoveSpeed = 20.0f;
 
     [Header("Firing Properties")]
-    public GameObject ProjectilePrefab;
     [SerializeField] private float _fireRate = 0.3f;
 
     [Header("Powerup Properties")]

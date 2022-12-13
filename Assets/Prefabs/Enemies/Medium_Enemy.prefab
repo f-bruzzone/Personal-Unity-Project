@@ -115,6 +115,8 @@ MonoBehaviour:
   _maxHealth: 150
   _healthBar: {fileID: 3895490488553857228}
   _spawnInvincibilityTime: 1.5
+  _projectile: {fileID: 480190706056357592, guid: 7e2851096eb296e4abd794c7112cff1c, type: 3}
+  _initialAttackDelay: 2.25
   MoveSpeed: 7
 --- !u!1 &2562904621241852191
 GameObject:

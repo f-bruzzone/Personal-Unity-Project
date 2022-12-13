@@ -81,3 +81,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _duration: 10
   _damageInc: 2
+  _projectile: {fileID: 6605334221342845640, guid: fa52a14fee9273a478322a79131b46b1, type: 3}

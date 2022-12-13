@@ -3,32 +3,32 @@ using UnityEngine.Pool;
 
 public class ProjectileObjectPool: MonoBehaviour
 {
-	[SerializeField] private Projectile _projectile;
+	[SerializeField] private ProjectileNormal _projectile;
 
-    public static IObjectPool<Projectile> _pool;
+    public static IObjectPool<ProjectileNormal> Pool;
 
 	private void Start()
 	{
-		_pool = new ObjectPool<Projectile>(CreateProjectile, TakeFromPool, ReturnToPool, RemoveFromPool, false, 30, 50);
+		Pool = new ObjectPool<ProjectileNormal>(CreateProjectile, TakeFromPool, ReturnToPool, RemoveFromPool, false, 30, 50);
 	}
 
-	private Projectile CreateProjectile()
+	private ProjectileNormal CreateProjectile()
 	{
 		return Object.Instantiate(_projectile);
 	}
 
-	private void TakeFromPool(Projectile projectile)
+	private void TakeFromPool(ProjectileNormal projectile)
 	{
-		projectile.GetComponent<Projectile>().Damage = _projectile.Damage;
+		projectile.GetComponent<ProjectileNormal>().Damage = _projectile.Damage;
 		projectile.gameObject.SetActive(true);
 	}
 
-	private void ReturnToPool(Projectile projectile)
+	private void ReturnToPool(ProjectileNormal projectile)
 	{
         projectile.gameObject.SetActive(false);
     }
 
-	private void RemoveFromPool(Projectile projectile)
+	private void RemoveFromPool(ProjectileNormal projectile)
 	{
 		Object.Destroy(projectile);
 	}

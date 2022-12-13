@@ -6,6 +6,9 @@ public class Enemy : MonoBehaviour, IDamageable
     [SerializeField] private float _maxHealth = 100;
     [SerializeField] private HealthBar _healthBar;
     [SerializeField] private float _spawnInvincibilityTime;
+    [SerializeField] private EnemyProjectile _projectile;
+    [SerializeField] private float _initialAttackDelay;
+
     private float _currentHealth;
     private EnemyMovement _enemyMovement;
     private bool isInvincible = true;
@@ -19,6 +22,7 @@ public class Enemy : MonoBehaviour, IDamageable
         _enemyMovement = new EnemyMovement(this);
         StartCoroutine(SpawnInvincibility());
         _healthBar.UpdateHealth(_maxHealth, _currentHealth);
+        StartCoroutine(InitialAttack());
     }
 
     private void Update()
@@ -41,9 +45,7 @@ public class Enemy : MonoBehaviour, IDamageable
             else
             {
                 if (!isInvincible)
-                {
-                    _currentHealth = value;
-                }
+                   _currentHealth = value;
             }
         }
     }
@@ -58,5 +60,18 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         yield return new WaitForSeconds(_spawnInvincibilityTime);
         isInvincible = false;
+    }
+
+    private IEnumerator Attack()
+    {
+        Instantiate(_projectile, transform.position, transform.rotation);
+        yield return new WaitForSeconds(2.5f);
+        StartCoroutine(Attack());
+    }
+
+    private IEnumerator InitialAttack()
+    {
+        yield return new WaitForSeconds(_initialAttackDelay);
+        StartCoroutine(Attack());
     }
 }
