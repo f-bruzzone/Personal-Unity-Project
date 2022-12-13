@@ -5,11 +5,11 @@ public class Enemy : MonoBehaviour, IDamageable
 {
     [SerializeField] private float _maxHealth = 100;
     [SerializeField] private HealthBar _healthBar;
+    [SerializeField] private float _spawnInvincibilityTime;
     private float _currentHealth;
     private EnemyMovement _enemyMovement;
-    private float _spawnInvincibilityTime = 1.5f;
+    private bool isInvincible = true;
 
-    public bool isInvincible = true;
     public float MoveSpeed;
 
 

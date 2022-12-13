@@ -114,7 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 150
   _healthBar: {fileID: 3895490488553857228}
-  isInvincible: 1
+  _spawnInvincibilityTime: 1.5
   MoveSpeed: 7
 --- !u!1 &2562904621241852191
 GameObject:
